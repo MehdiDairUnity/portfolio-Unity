@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Mehdi Porfolio</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Resume Website Template Free Download" name="keywords">
+        <meta content="Resume Website Template Free Download" name="description">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <!-- Favicon -->
+
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <div class="wrapper">
+            <div class="sidebar">
+                <!-- navigator li f jenb  -->
+                <div class="sidebar-header">
+                    <!-- tswera dyal Navigation li f jenb -->
+                    <img src="Portfolio/mehdi.jpg" alt="Image" style="height: 60%;">
+                </div>
+                <div class="sidebar-content">
+                    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                        <a href="#" class="navbar-brand">Navigation</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#header">Home<i class="fa fa-home"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">About<i class="fa fa-address-card"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#experience">Experience<i class="fa fa-star"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#service">Service<i class="fa fa-tasks"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#portfolio">Portfolio<i class="fa fa-file-archive"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact<i class="fa fa-envelope"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!-- lien dyal navigator github insta linkedin -->
+                <div class="sidebar-footer">
+                    <a href="https://github.com/Mehdi202016" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/mehdi_marwan_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/elmehdi-dair-68971b174/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="content">
+                <!-- Header Start -->
+                <div class="header" id="header">
+                    <div class="content-inner">
+                        <h1>Elmehdi Dair</h1>
+                        <h2></h2>
+                        <div class="typed-text">Senior Unity developer, VR/AR/MR Developer</div>
+                    </div>
+                </div>
+                <!-- Header End -->
+                
+                <!-- Large Button Start -->
+                <div class="large-btn">
+                    <div class="content-inner">
+                        <!-- cv we lien dyal Upwork -->
+                        <a class="btn" href="https://www.linkedin.com/in/elmehdi-dair-68971b174/" target="_blank"><i class="fa fa-download"></i>Linkden </a>
+                        <a class="btn" href="https://www.upwork.com/freelancers/~017f87fb45bc485db7" target="_blank" ><i class="fa fa-hands-helping"></i>Upwork</a>
+                    </div>
+                </div>
+                <!-- Large Button End -->
+                
+                <!-- About Start -->
+                <div class="about" id="about">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>About Me</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-lg-5">
+                                <img src="Portfolio/pic2.jpg" alt="Image" style="height: 320px;">
+                            </div>
+                            <div class="col-md-6 col-lg-7">
+                                <p style="padding-top: 40px;">
+I am a Game Developer 🎮 with over 5 years of experience in Unity and more than 6 years of expertise in C#. My skills span a wide range of areas, including 2D games, 3D games, VR/AR applications, and advanced game programming, enabling me to bring creative and immersive game ideas to life.I specialize in designing and developing interactive 3D, 2D, VR, and AR experiences with Unity, taking pride in creating both engaging gameplay mechanics and stunning visuals. My passion for problem-solving drives me to tackle complex challenges, from intricate game logic to crafting immersive environments.I am committed to pushing the boundaries of game development, turning imaginative ideas into reality with technical precision and creativity.                           
+                                </p>
+                                <!-- lien upwork -->
+                                <a class="btn" href="https://www.youtube.com/watch?v=ZnxcccqVrmY&ab_channel=ElmehdiDAIR" target="_blank" >my Work</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- pourcentage dyal skills we technique   -->
+                            <div class="col-md-6">
+                                <div class="skills">
+                                    <div class="skill-name">
+                                        <p>Game Design (Roblox Studio)</p><p>70%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>Senior Game Developer 🎮</p><p>90%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>Augmented Reality (AR) Developer</p><p>90%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skills">
+                                    <div class="skill-name">
+                                        <p>Virtual Reality (VR) Developer</p><p>90%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p> Mobile Developer (ios | Andoird)</p><p>70%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p> Unity Instructor 🧑🏻‍💻</p><p>80%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- About End -->
+                
+                <!-- Education Start -->
+                <div class="education" id="education">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Education</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>2021 <i>to</i> 2022</span>
+                                    <h3>Training (VR / AR) (EON Reality) </h3>
+                                    <p style="padding: 15px 0px 15px 0px; font-size: 13px;">BENGUERIR, MOROCCO – UNIVERSITY MOHAMMED 6 POLYTECHNIQUE</p>
+                                    <p style="padding-bottom: 65px;">Learn how to create games and applications using augmented and virtual reality and mixed reality in
+modern ways as well and learn to create 3D models using 3d sMax and develop my experience
+working on Unity..</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>2018 <i>to</i> 2019</span>
+                                    <h3>Professional License (mobile and innovative computer System Engineering)</h3>
+                                    <p style="padding: 15px 0px 15px 0px; font-size: 13px;">MOHAMMEDIA, MOROCCO – FACULTE DES SCIENCES ET TECHNIQUES</p>
+                                    <p>Professional License (mobile and innovative computer System Engineering) 
+                                        graduate Professional License in mobile and innovative computer System Engineering, FST Mohammadia, mentioned very well. This year enabled me to develop skills in creating mobile 
+                                        applications in a professional manner</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>2016 <i>to</i> 2018</span>
+                                    <h3>BOUZNIKA, MOROCCO – ISTA </h3>
+                                    <p style="padding: 15px 0px 15px 0px; font-size: 13px;">MOHAMMEDIA, MOROCCO – FACULTE DES SCIENCES ET TECHNIQUES</p>
+                                    <p>A technical graduate specializing in IT development, the Bouznika office is mentioned very well. 
+                                        During these two years, I learned to program mobile applications, computer applications and 
+                                        websites in a short way, and I created my first 3D game. It was two important years in my life 
+                                        because it was the reason why I discovered my love for programming.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>2015 <i>to</i> 2016</span>
+                                    <h3>Bachelor in Physics </h3>
+                                    <p style="padding: 15px 0px 15px 0px; font-size: 13px;">BENSLIMANE, MOROCCO – HASSAN 2</p>
+                                    <p style="padding-bottom: 150px;">graduate Bachelor in Science Physics,Hassan 2 Benslimane.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Education Start -->
+                
+                <!-- Experience Start -->
+                <div class="experience" id="experience">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Experience</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>2022</span>
+                                    <h3>Algorithmics </h3>
+                                    <h4>Mohammadia</h4>
+                                    <h5>Lead Unity Roblox Studio Educator</h5>
+                                    <ul style="margin-left: -15px;">
+                                        <li>Created a curriculum for teaching Unity 3D/2D development, C# programming, and animation
+to children.</li>
+                                        <li>Trained over 30 students in Unity and Roblox Studio, with a focus on game design and
+development best practices</li>
+                                        <li>Facilitated hands-on projects, leading to 90% of students successfully creating their first
+playable game</li>
+                                        <li>Teaching Roblox (Creating Maps in Roblox Studio)</li>
+                                    </ul>                                 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span> 2023 Mai – 2023 juil<i>to</i> 023 Dec – 2024 Mai</span>
+									                                    <h3>RMStudio</h3>
+                                    <h5>Unity Game Developer</h5>
+									
+                                    <h4>Remotly</h4>
+                                    <ul style="margin-left: -15px; margin-bottom: 120px;">
+                                        <li>Revamped UI/UX designs for mobile games, leading to a 20% increase in player retention rates.</li>
+                                        <li>Upgraded and debugged legacy game versions, improving stability and compatibility across
+devices.</li>
+                                        <li>Created mobile games from concept to release, achieving an average user rating of 4.6/5 on
+app stores.</li>
+                                        <li>Integrated advanced ad network solutions, boosting in-app revenue by 15%.</li>
+                                    </ul>                                  
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>2022 Juin <i>to</i> 2023 Mars</span>
+                                    <h3>AppiStadium</h3>
+                                    <h4>CASABLANCA, MOROCCO</h4>
+                                    <h5>Lead Unity Game Developer</h5>
+                                    <ul style="margin-left: -15px; margin-bottom: 115px;">
+                                        <li>Develop, iterate, and maintain game systems and functionality in Unity 3D and the company's
+private server.</li>
+                                        <li>Implemented test-driven development practices, improving code reliability and reducing bugs
+by 35%.</li>
+                                        <li>Collaborated with cross-functional teams to design and implement game system integrations
+into React-based applications, boosting workflow efficiency by 25%.</li>
+
+                                        <li>communicate and solve math and physics problems effectively</li>
+										<li>identify areas for modification in existing programs and then develop these modifications</li>
+										<li>maintain and share knowledge with the team on leading industry trends in software engineering
+and processes</li>
+                                    </ul>                                
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>2021 Decembre – 2022 April</span>
+                                    <h3>ABXR STUDIO</h3>
+                                    <h4>Remotly</h4>
+                                    <h5>Unity Mobile Developer</h5>
+                                    <!-- <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p> -->
+                                    <ul style="margin-left: -15px;">
+                                        <li>Hyper-Casual prototype / games developer (unity).</li>
+                                        <li>Addition analytics and ads network integration.</li>
+                                        <li>Assets implementation, level design.</li>
+                                        <li>Reskin games (3d / 2d).</li>
+                                        <li>Have workder with many clients from (Morocco, india, United state …).</li>
+                                        <li>AR / VR games apps</li>
+                                        <li>Mobile Appilcation (IOS / Android)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience Start -->
+                
+                <!-- Service Start -->
+                <div class="service" id="service">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Service</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-desktop"></i>
+                                    <h3>Game Development Services</h3>
+									<div>Bringing Your Ideas to Life with High-Quality Mobile and Multiplayer Games
+
+I specialize in creating engaging, polished, and innovative games tailored to meet your specific needs. With expertise in Unity and extensive experience in game development, I offer a range of services, including:
+
+Mobile Game Development
+
+Develop exciting games for Android and iOS platforms.
+Seamless gameplay experiences optimized for performance across devices.
+Multiplayer Game Development
+
+Crafting real-time multiplayer games using technologies like Photon and Unity’s built-in multiplayer systems.
+Integration of features such as matchmaking, leaderboards, and chat systems for a competitive edge.
+All Game Genres Covered
+
+Arcade Games: Fast-paced, addictive games designed for players of all ages.
+Puzzle Games: Brain-teasing challenges that keep players engaged for hours.
+Serious Games: Custom solutions for industries such as healthcare, education, and corporate training, leveraging gamification to solve real-world problems.
+Why Choose My Services?
+
+End-to-End Game Development: From ideation and prototyping to deployment and maintenance.
+Creative and Flexible Solutions: Games tailored to your vision and business goals.
+Cross-Platform Expertise: Delivering games that reach a wide audience.
+Attention to Detail: Polished designs, smooth animations, and immersive gameplay experiences.
+Let’s create the next great game together! Reach out today to bring your game idea to life.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-laptop"></i>
+                                    <h3>Immersive Application Development Services
+Crafting Cutting-Edge VR, AR, MR, and Serious Applications</h3>
+					<div>I specialize in creating immersive and interactive experiences for businesses, entertainment, and education through Virtual Reality (VR), Augmented Reality (AR), Mixed Reality (MR), and serious applications. My services cover all stages of development, delivering innovative solutions to captivate users and solve real-world challenges.
+
+Services Offered
+Virtual Reality (VR) Apps and Games
+
+Develop fully immersive VR experiences for platforms such as Meta Quest, HTC Vive, and PlayStation VR.
+Create VR games with stunning graphics, realistic physics, and interactive gameplay.
+Design training simulators and virtual environments for industries like education, healthcare, and real estate.
+Augmented Reality (AR) Apps and Games
+
+Develop AR applications that enhance the real world with engaging virtual overlays.
+Expertise in platforms like ARKit, ARCore, and Vuforia.
+Create AR games, marketing campaigns, and educational tools that captivate and inform users.
+Mixed Reality (MR) Apps and Games
+
+Combine VR and AR technologies to create seamless Mixed Reality experiences for HoloLens, Magic Leap, and more.
+Design interactive environments that merge the digital and physical worlds for gaming, training, and industrial use.
+Serious Applications
+
+Build custom apps for industries like healthcare, corporate training, education, and tourism.
+Develop gamified solutions for employee training, customer engagement, and process optimization.
+Offer intuitive interfaces and realistic simulations for practical, real-world applications.
+Why Work With Me?
+Comprehensive Development: From conceptualization to deployment, ensuring a smooth process and high-quality results.
+Innovative Solutions: Delivering applications that are both creative and functional.
+Cross-Platform Expertise: Ensuring compatibility with all major VR, AR, and MR devices.
+Tailored for Impact: Focusing on user experience and achieving measurable goals for businesses and users alike.
+Let’s Build the Future Together
+Whether you want to create a VR game, an AR marketing app, or an MR training solution, I am here to make your vision a reality. Let’s collaborate to bring your ideas to life with cutting-edge technology and innovative design.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-mobile"></i>
+                                    <h3>Mobile App Development Services</h3>
+					<div>I specialize in creating high-quality mobile applications for both iOS and Android platforms, tailored to your unique needs.
+
+End-to-End Development: From concept and design to development and deployment.
+Cross-Platform Solutions: Using tools like Unity, Flutter, or native development for seamless performance on both platforms.
+Feature-Rich Apps: Integration of advanced features like real-time updates, user-friendly interfaces, and cloud connectivity.
+Whether it’s a business app, utility, or creative project, I’m here to bring your ideas to life. Let’s collaborate to create the perfect mobile solution!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Start -->
+                
+                <!-- Portfolio Start -->
+                <div class="portfolio" id="portfolio">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Portfolio</h2>
+                        </div>
+                        <!-- category GAMES -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul id="portfolio-flters">
+                                    <li data-filter="*" class="filter-active">All</li>
+                                    <li data-filter=".web-des">Mobile Games</li>
+                                    <li data-filter=".web-dev">Virtual Reality and Mixed Reality Games</li>
+                                    <li data-filter=".dig-mar">Multiplayer Games</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row portfolio-container">
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/ico.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/ico.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/shorts/gC6lDJVuhFc" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Seasson <span>unity Hyper casual game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/zz.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/zz.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/shorts/gC6lDJVuhFc" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Attack on Monsters <span>Arcarde Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							
+							                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/tt.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/tt.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/watch?v=L6ArnqMWY8k&ab_channel=ElmehdiDAIR" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"> Pizza Driver <span>Hyper Casual Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							
+								<div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/aa.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/aa.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_gamedev-mobilegaming-sumoio-activity-7257345781509058560-NCAa?utm_source=share&utm_medium=member_desktop" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"> SUMO.IO <span>Hyper Casual Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							
+															<div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/yy.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/yy.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_hypercasual-hyper-casual-activity-7129869084518690816-EJJ5?utm_source=share&utm_medium=member_desktop" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"> Soda Run <span>Hyper Casual Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							
+																						<div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/yy.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/yy.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_unity-game-prototype-activity-7065321266420817920-LaCd?utm_source=share&utm_medium=member_desktop" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"> ping pong 3d <span> Sport Casual Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							
+							
+							    <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/icon.png" class="img-fluid" alt="">
+                                        <a href="Portfolio/icon.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_demonslayer-unity3d-gamedevelopment-activity-7263511807661674496-BYZ8?utm_source=share&utm_medium=member_desktop" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Demon Slayer <span>Arcade Mobile Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+																		
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/bird.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/bird.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/shorts/ujZb9w0bbUw" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Luckies Birds <span>unity Hyper casual game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/flyman.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/flyman.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/shorts/PXS5SjY23Lg" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Flying Man <span>unity Hyper casual game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/math.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/math.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://youtube.com/shorts/qeqe1rY71Xo?feature=share" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="https://youtube.com/shorts/qeqe1rY71Xo?feature=share">Math <span>unity Hyper casual game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/pop.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/pop.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/watch?v=fRoC6Ql-EkQ" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Poop Man <span>unity Hyper casual game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/ww.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/ww.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/watch?v=E5nlKJdh3Zk" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">Criminal Scanner <span>unity Hyper casual game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <!-- Category VR -->
+                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/beatsaber.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/beatsaber.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/watch?v=0vQ7-3rZsX0" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="https://www.youtube.com/watch?v=0vQ7-3rZsX0&t=9s" target="_blank" >Beat Saber <span>Metaverse Game in 2h unity</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/gg.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/gg.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a href="https://www.youtube.com/watch?v=yRg_eU8PKIM" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="https://www.youtube.com/watch?v=yRg_eU8PKIM&t=7s" target="_blank" > survivalZombie Game <span>Virtual Reality Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/dentire.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/dentire.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_i-am-pleased-to-share-with-you-the-final-activity-6939276811335827456-Mcew?utm_source=linkedin_share&utm_medium=member_desktop_web" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"> Dentiste App <span>Virtual Reality App</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <!-- Ikea app -->
+                            <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/iko.jpg" class="img-fluid" alt="">
+                                        <a href="Portfolio/iko.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_virtualreality-eonreality-training-activity-6877367420432986112-7QwJ?utm_source=linkedin_share&utm_medium=member_desktop_web" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#">ikea Place App <span>Application</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							<div class="col-lg-4 col-md-6 portfolio-item dig-mar">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="Portfolio/dIcon.png" class="img-fluid" alt="">
+                                        <a href="Portfolio/dIcon.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_unity3d-photon-multiplayergames-activity-7247647785376714753-PC7G?utm_source=share&utm_medium=member_desktop" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" href="#"> Naval Showdown multiplayer strategy game<span>Multiplayer Game</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+							
+							
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Start -->
+                
+                <!-- Review Start -->
+                <div class="review" id="review">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Skills</h2>
+                        </div>
+                        <div class="row align-items-center review-slider">
+                            <div class="col-md-12">
+                                <div class="review-slider-item" style="border-left: 3px solid #FF6F61;">
+                                    <div class="review-text" style="margin-left: 30px;">
+                                        <p>Skills</p>
+                                        <ul>
+                                            <li>Senior C# Developer : 7 years experiences</li>
+											<li>Senior Unity Developer : 6 years experiences</li>
+                                            <li>Software Enginer Developer : 3 years experiences</li>
+                                            <li>Virtual Reality VR : 3 years Experience</li>
+											<li>Augmented Reality AR : 3 years Experience</li>
+                                            <li>Mobile Application Developer (Android | IOS) : 4 years Experience</li>
+                                            <li>Unity Instructor and Mentor : 2 years Experience</li>
+                                            <li>Roblox Studio & Game Design & Lua Script  : 3 years Experience</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Review End -->
+                
+                <!-- Contact Start -->
+                <div class="contact" id="contact">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Contact</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="contact-info">
+                                    <p><i class="fa fa-user"></i>Elmehdi Dair</p>
+                                    <p><i class="fa fa-tag"></i>Senior Unity developer</p>
+                                    <p><i class="fa fa-envelope"></i><a href="mehdidair1998@gmail.com">mehdidair1998@gmail.com</a></p>
+                                    <p><i class="fa fa-phone"></i><a href="tel:+212616647052">+212 616 64 70 52</a></p>
+                                    <p><i class="fa fa-map-marker"></i>Morocco,Casablanca</p>
+                                    <div class="social">
+                                        <a class="btn" href="https://www.linkedin.com/in/elmehdi-dair-68971b174/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="btn" href="https://github.com/Mehdi202016" target="_blank"><i class="fab fa-github"></i></a>
+                                        <a class="btn" href="https://www.instagram.com/mehdi_marwan_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a class="btn" href="https://www.youtube.com/channel/UCAycs1BKd3-QY3dXzAJjIqw" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact End -->
+                
+                <!-- Footer Start -->
+                <div class="footer">
+                    <div class="content-inner">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <p>&copy; Copyright <a href="https://www.linkedin.com/in/elmehdi-dair-68971b174/">Elmehdi Dair</a>. All Rights Reserved</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Powered by <a href="https://www.linkedin.com/in/elmehdi-dair-68971b174/">Elmehdi Dair</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Start -->
+            </div>
+        </div>
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
