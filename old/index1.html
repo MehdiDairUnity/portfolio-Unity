@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elmehdi Dair | Senior Unity Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #EF233C 0%, #D80032 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #EF233C 0%, #D80032 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #EF233C;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-overlay {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            width: 2px;
+            background: #EF233C;
+        }
+        
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #EF233C;
+            border: 3px solid white;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        .loader {
+            border-top-color: #EF233C;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Custom scrollbar for tools section */
+        .tools-scroll-container {
+            scrollbar-width: thin;
+            scrollbar-color: #EF233C #f3f4f6;
+        }
+
+        .tools-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .tools-scroll-container::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 10px;
+        }
+
+        .tools-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #EF233C;
+            border-radius: 10px;
+        }
+
+        /* Tool card animation */
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(239, 35, 60, 0.2);
+        }
+        
+        /* Mobile menu animation */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        #mobile-menu.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .portfolio-filter {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .portfolio-filter button {
+                flex: 1 0 40%;
+                text-align: center;
+                padding: 8px 12px;
+            }
+            
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+            
+            .contact-info {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-40 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">MD</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-link py-2 text-sm md:text-base">Home</a>
+                    <a href="#about" class="nav-link py-2 text-sm md:text-base">About</a>
+                    <a href="#services" class="nav-link py-2 text-sm md:text-base">Services</a>
+                    <a href="#experience" class="nav-link py-2 text-sm md:text-base">Experience</a>
+                    <a href="#portfolio" class="nav-link py-2 text-sm md:text-base">Portfolio</a>
+                    <a href="#tools" class="nav-link py-2 text-sm md:text-base">Tools</a>
+                    <a href="#contact" class="nav-link py-2 text-sm md:text-base">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden bg-white px-4 shadow-lg">
+            <div class="py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-red-500 transition">Home</a>
+                <a href="#about" class="block py-2 text-gray-800 hover:text-red-500 transition">About</a>
+                <a href="#services" class="block py-2 text-gray-800 hover:text-red-500 transition">Services</a>
+                <a href="#experience" class="block py-2 text-gray-800 hover:text-red-500 transition">Experience</a>
+                <a href="#portfolio" class="block py-2 text-gray-800 hover:text-red-500 transition">Portfolio</a>
+                <a href="#tools" class="block py-2 text-gray-800 hover:text-red-500 transition">Tools</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-red-500 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-20 gradient-bg text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 hero-content">
+                    <p class="text-lg md:text-xl font-medium mb-2">Hello, I'm</p>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Elmehdi Dair</h1>
+                    <div class="flex items-center justify-center md:justify-start mb-6">
+                        <h2 class="text-xl md:text-2xl font-medium mr-2">I'm a Senior Unity Developer</h2>
+                        <span id="typed" class="text-xl md:text-2xl font-medium"></span>
+                        <span class="typed-cursor text-xl md:text-2xl">|</span>
+                    </div>
+                    <p class="text-base md:text-lg mb-6 max-w-lg mx-auto md:mx-0">
+                        Senior Unity Developer with 6+ years of experience creating immersive games, VR/AR experiences, and interactive applications.
+                    </p>
+                    <div class="flex space-x-4 hero-buttons">
+                        <a href="https://www.linkedin.com/in/elmehdi-dair-68971b174/" target="_blank" class="px-4 py-2 sm:px-6 sm:py-3 bg-white text-red-600 font-medium rounded-lg hover:bg-gray-100 transition duration-300 text-sm sm:text-base">
+                            let's Work Together
+                        </a>
+                        <a href="#portfolio" class="px-4 py-2 sm:px-6 sm:py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-red-600 transition duration-300 text-sm sm:text-base">
+                            Check my Works
+                        </a>
+						
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                    <div class="relative w-full max-w-xs sm:max-w-md">
+                        <div class="absolute -inset-2 sm:-inset-4 bg-red-400 rounded-2xl opacity-20 blur-lg"></div>
+                        <video class="w-full rounded-2xl shadow-2xl" poster="img/A.jpg" controls>
+                            <source src="img/f_jdg7RfnA.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Results-driven Senior Unity Developer with extensive experience in game development and immersive technologies(VR | AR | MR).
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-red-500 shadow-lg about-image">
+                            <img src="img/about.jpg" alt="Elmehdi Dair" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 sm:-bottom-5 sm:-right-5 bg-white p-2 sm:p-4 rounded-lg shadow-lg">
+                            <p class="text-xl sm:text-2xl font-bold gradient-text">7+</p>
+                            <p class="text-xs sm:text-sm text-gray-600">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pl-8 lg:pl-16">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4">Senior Unity Developer & Mentor & Instructor</h3>
+                    <p class="text-gray-700 mb-6 text-sm sm:text-base">
+                        I specialize in creating immersive gaming experiences using Unity, with expertise in VR, AR, and multiplayer systems. 
+                        My passion lies in pushing the boundaries of interactive technology while mentoring the next generation of developers.
+                    </p>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-sm sm:text-base">Game Development</span>
+                            <span class="text-sm sm:text-base">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-sm sm:text-base">VR/AR Development</span>
+                            <span class="text-sm sm:text-base">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-sm sm:text-base">Mobile Development</span>
+                            <span class="text-sm sm:text-base">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+					
+					<div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-sm sm:text-base">Game Designer </span>
+                            <span class="text-sm sm:text-base">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+					
+					<div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-sm sm:text-base">Roblox Studio Developer</span>
+                            <span class="text-sm sm:text-base">93%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 93%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-sm sm:text-base">Teaching & Mentoring</span>
+                            <span class="text-sm sm:text-base">93%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="skill-bar bg-red-500 h-2 rounded-full" style="width: 93%"></div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://push-to-go.netlify.app/" target="_blank" class="inline-block px-4 py-2 sm:px-6 sm:py-3 gradient-bg text-white font-medium rounded-lg hover:opacity-90 transition duration-300 text-sm sm:text-base">
+                        Play My Games
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Services</span></h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    I offer a range of services to bring your digital projects to life with cutting-edge technology.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-gamepad text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Game Development</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Creating high-quality games with precision, creativity, and smooth performance. Delivering top-tier development for an exceptional gaming experience.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-vr-cardboard text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">VR Development</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Specializing in immersive VR experiences that captivate and engage. From concept to reality, I deliver high-quality VR games and applications.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">AR Development</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Creating interactive and innovative AR experiences that blend the digital and real world. Engaging, high-quality AR games and apps.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chalkboard-teacher text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Unity Instruction</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Training junior developers in game creation and design. Comprehensive courses covering Unity, C#, and game development principles.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">Multiplayer Systems</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Developing robust multiplayer game systems using Photon PUN and other networking solutions for seamless online experiences.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 gradient-bg rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">AI Integration</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Implementing intelligent NPC behaviors and game AI to create more dynamic and engaging gameplay experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    My professional journey through the years working with cutting-edge technologies.
+                </p>
+            </div>
+            
+            <div class="relative timeline">
+                <!-- Experience Item 1 -->
+                <div class="relative mb-8 pl-12 md:pl-0 md:flex">
+                    <div class="md:w-1/2 md:pr-8 md:text-right">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-md">
+                            <p class="text-xs sm:text-sm text-red-500 font-medium mb-1">Project PhD in Psychology | Dec 2024 - Jan 2025</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">Virtual Reality Application Developer</h3>
+                            <p class="text-gray-600 text-sm">Remotely</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                            <p class="text-gray-700 text-sm sm:text-base">
+                                Developed a VR application for claustrophobia treatment using Meta Quest 3, Unity, and Photon PUN. 
+                                Created immersive 3D environments for exposure therapy and implemented a therapist control interface 
+                                for real-time monitoring. Ensured cultural adaptation and scientific compatibility for real-world use.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="relative mb-8 pl-12 md:pl-0 md:flex">
+                    <div class="md:w-1/2 md:pr-8 md:text-right order-2">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border-r-4 border-red-500">
+                            <p class="text-gray-700 text-sm sm:text-base">
+                                Created a curriculum for teaching Unity 3D/2D, C#, and animation to children. 
+                                Trained 30+ students in Unity and Roblox Studio, focusing on game design and development. 
+                                Led hands-on projects, helping 90% of students create their first playable game. 
+                                Taught map creation in Roblox Studio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0 order-1">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-md">
+                            <p class="text-xs sm:text-sm text-red-500 font-medium mb-1">Algorithmics | Oct 2023 - Nov 2024</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">Lead Unity Roblox Studio Educator</h3>
+                            <p class="text-gray-600 text-sm">Mohammadia, Morocco</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 3 -->
+                <div class="relative mb-8 pl-12 md:pl-0 md:flex">
+                    <div class="md:w-1/2 md:pr-8 md:text-right">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-md">
+                            <p class="text-xs sm:text-sm text-red-500 font-medium mb-1">RM Studio | May 2023 - Jul 2023, Dec 2023 - May 2024</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">Unity Mobile Game Developer</h3>
+                            <p class="text-gray-600 text-sm">Remotely</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                            <p class="text-gray-700 text-sm sm:text-base">
+                                Revamped UI/UX for mobile games, increasing player retention by 20%. 
+                                Upgraded and debugged legacy games for improved stability and device compatibility. 
+                                Created mobile games from concept to release, achieving an average rating of 4.6/5. 
+                                Integrated advanced ad networks, boosting in-app revenue by 15%.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 4 -->
+                <div class="relative mb-8 pl-12 md:pl-0 md:flex">
+                    <div class="md:w-1/2 md:pr-8 md:text-right order-2">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border-r-4 border-red-500">
+                            <p class="text-gray-700 text-sm sm:text-base">
+                                Delivered hands-on Unity training, covering core functionalities and workflows. 
+                                Taught C# programming for game development, enabling students to implement game logic. 
+                                Guided students in creating mini-games, enhancing creativity and technical skills. 
+                                Provided comprehensive instruction on Unity's 2D and 3D animation systems.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0 order-1">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-md">
+                            <p class="text-xs sm:text-sm text-red-500 font-medium mb-1">Oasis Connaisance | Mar 2023 - Apr 2023</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">Unity Instructor</h3>
+                            <p class="text-gray-600 text-sm">Casablanca, Morocco</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 5 -->
+                <div class="relative mb-8 pl-12 md:pl-0 md:flex">
+                    <div class="md:w-1/2 md:pr-8 md:text-right">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-md">
+                            <p class="text-xs sm:text-sm text-red-500 font-medium mb-1">AppiStaduim Remotely | Jun 2022 - Mar 2023</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">Lead Unity Game Developer</h3>
+                            <p class="text-gray-600 text-sm">Belgium</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                            <p class="text-gray-700 text-sm sm:text-base">
+                                Developed, iterated, and maintained game systems and functionality in Unity 3D and the company's private server. 
+                                Implemented test-driven development, improving code reliability and reducing bugs by 35%. 
+                                Collaborated with cross-functional teams to integrate game systems into React-based applications, 
+                                boosting workflow efficiency by 25%.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Item 6 -->
+                <div class="relative pl-12 md:pl-0 md:flex">
+                    <div class="md:w-1/2 md:pr-8 md:text-right order-2">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border-r-4 border-red-500">
+                            <p class="text-gray-700 text-sm sm:text-base">
+                                Developed and launched an Augmented reality project, increasing client app engagement by 20%. 
+                                Designed intuitive UI layouts for mobile apps, contributing to a 4.5/5 average user rating. 
+                                Integrated Firebase for real-time data synchronization and analytics tracking.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8 mt-4 md:mt-0 order-1">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-md">
+                            <p class="text-xs sm:text-sm text-red-500 font-medium mb-1">ABXR STUDIO Remotely | Dec 2021 - Apr 2022</p>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">Unity AR Mobile Developer</h3>
+                            <p class="text-gray-600 text-sm">USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Portfolio</span></h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    A showcase of my recent projects across different platforms and technologies.
+                </p>
+            </div>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex flex-wrap justify-center gap-2 portfolio-filter">
+                    <button type="button" class="filter-btn px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-filter="all">
+                        All Projects
+                    </button>
+                    <button type="button" class="filter-btn px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-filter="vr">
+                        VR Projects
+                    </button>
+                    <button type="button" class="filter-btn px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-filter="ar">
+                        AR Projects
+                    </button>
+                    <button type="button" class="filter-btn px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-red-500 focus:text-red-700" data-filter="mobile">
+                        Mobile Games
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 portfolio-container">
+                <!-- VR Dental Application -->
+                <div class="portfolio-item vr">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-1.jpg" alt="VR Dental Application" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">VR Dental Application</h3>
+                                    <a href="https://www.youtube.com/watch?v=18EJ3Yd3tAs&ab_channel=MehdiDair" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VR Beat Saber Game -->
+                <div class="portfolio-item vr">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-7.jpg" alt="VR Beat Saber Game" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">VR Beat Saber Game</h3>
+                                    <a href="https://www.youtube.com/watch?v=ZnxcccqVrmY&ab_channel=MehdiDair" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ikea Place Application -->
+                <div class="portfolio-item ar">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-2.jpg" alt="Ikea Place Application" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">Ikea Place Application</h3>
+                                    <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_virtualreality-eonreality-training-activity-6877367420432986112-7QwJ" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Multiplayer Game BattleShip -->
+                <div class="portfolio-item mobile">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-3.jpg" alt="Multiplayer Game BattleShip" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">Multiplayer BattleShip</h3>
+                                    <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_unity3d-photon-multiplayergames-activity-7247647785376714753-PC7G" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VR Shooting Game -->
+                <div class="portfolio-item vr">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-4.jpg" alt="VR Shooting Game" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">VR Shooting Game</h3>
+                                    <a href="https://www.youtube.com/watch?v=yRg_eU8PKIM&ab_channel=MehdiDair" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VR claustrophobia App -->
+                <div class="portfolio-item vr">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-43.jpg" alt="VR claustrophobia App" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">VR Claustrophobia App</h3>
+                                    <a href="https://drive.google.com/file/d/17GRg9JvdNYk3YTlu3C3kltGh1jXHraEK/view" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Arcade Attack On Monsters -->
+                <div class="portfolio-item mobile">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-5.jpg" alt="Arcade Attack On Monsters" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">Arcade Attack On Monsters</h3>
+                                    <a href="https://www.youtube.com/watch?v=wdP6S6hC7Hg&ab_channel=MehdiDair" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HC SUMO.IO -->
+                <div class="portfolio-item mobile">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-6.jpg" alt="HC SUMO.IO" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">HC SUMO.IO</h3>
+                                    <a href="https://www.linkedin.com/posts/elmehdi-dair-68971b174_gamedev-mobilegaming-sumoio-activity-7257345781509058560-NCAa" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HC Pizza Driver -->
+                <div class="portfolio-item mobile">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="relative overflow-hidden">
+                            <img src="img/portfolio-66.jpg" alt="HC Pizza Driver" class="w-full h-48 sm:h-56 object-cover">
+                            <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 sm:p-6">
+                                <div>
+                                    <h3 class="text-white text-lg sm:text-xl font-bold mb-2">HC Pizza Driver</h3>
+                                    <a href="https://www.youtube.com/shorts/L6ArnqMWY8k" target="_blank" class="inline-flex items-center text-white hover:text-red-300 transition duration-300 text-sm sm:text-base">
+                                        View Project <i class="fas fa-external-link-alt ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Tools</span></h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Custom tools and editors I've developed to streamline game development workflows.
+                </p>
+            </div>
+
+            <div class="tools-scroll-container overflow-x-auto pb-4">
+                <div class="flex space-x-4 min-w-max">
+                    <!-- Tool 1 -->
+                    <div class="tool-card bg-white rounded-xl shadow-lg p-4 w-64 flex-shrink-0">
+                        <div class="w-full h-32 bg-gray-100 rounded-lg mb-3 overflow-hidden">
+                            <img src="img/f.png" alt="Level Editor Tool" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Reference Validator Pro</h3>
+                        <p class="text-gray-600 text-sm mb-3">Reference Validator Pro scans your Unity scene for missing references and lets you fix them instantly, ensuring cleaner, error-free projects.</p>
+                        <a href="https://github.com/MehdiDairUnity/Unity-Script-Generator" target="_blank" class="inline-block px-3 py-1 gradient-bg text-white rounded-lg hover:opacity-90 transition duration-300 text-sm">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Tool 2 -->
+                    <div class="tool-card bg-white rounded-xl shadow-lg p-4 w-64 flex-shrink-0">
+                        <div class="w-full h-32 bg-gray-100 rounded-lg mb-3 overflow-hidden">
+                            <img src="img/d.png" alt="Animation Tool" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Script Generator Window</h3>
+                        <p class="text-gray-600 text-sm mb-3">Script Generator helps Unity developers create clean, consistent scripts in seconds with smart templates and live preview.</p>
+                        <a href="https://github.com/MehdiDairUnity/Script-Generator-Window" target="_blank" class="inline-block px-3 py-1 gradient-bg text-white rounded-lg hover:opacity-90 transition duration-300 text-sm">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Tool 3 -->
+                    <div class="tool-card bg-white rounded-xl shadow-lg p-4 w-64 flex-shrink-0">
+                        <div class="w-full h-32 bg-gray-100 rounded-lg mb-3 overflow-hidden">
+                            <img src="img/r.png" alt="Dialogue Editor" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Unity TODO List Tool</h3>
+                        <p class="text-gray-600 text-sm mb-3">TODO List Tool for Unity helps you manage tasks with priorities, deadlines, and auto-saving—streamlining solo and team workflows.</p>
+                        <a href="https://github.com/MehdiDairUnity/TODO-List-Unity-Editor-Tools" target="_blank" class="inline-block px-3 py-1 gradient-bg text-white rounded-lg hover:opacity-90 transition duration-300 text-sm">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Tool 4 -->
+                    <div class="tool-card bg-white rounded-xl shadow-lg p-4 w-64 flex-shrink-0">
+                        <div class="w-full h-32 bg-gray-100 rounded-lg mb-3 overflow-hidden">
+                            <img src="img/t.png" alt="Quest Designer" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Missing Script Cleaner Tool</h3>
+                        <p class="text-gray-600 text-sm mb-3">Missing Script Cleaner scans scenes and prefabs to quickly find and remove missing scripts, keeping your Unity project clean and error-free.</p>
+                        <a href="https://github.com/MehdiDairUnity/Unity-Asset-Cleaner-tools-Editor-GUI" target="_blank" class="inline-block px-3 py-1 gradient-bg text-white rounded-lg hover:opacity-90 transition duration-300 text-sm">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Client <span class="text-white">Testimonials</span></h2>
+                <p class="text-base sm:text-lg max-w-2xl mx-auto">
+                    What my clients and colleagues say about my work and professionalism.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+                            <img src="img/testimonial-1.jpg" alt="Khadija Temara" class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="text-lg sm:text-xl font-bold">Khadija Temara</h4>
+                            <p class="text-red-200 text-sm">Psychiatrist</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-3 text-sm sm:text-base">
+                        "The VR application developed for claustrophobia treatment has exceeded our expectations. The immersive 3D environments are highly effective for exposure therapy."
+                    </p>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+                            <img src="img/testimonial-2.jpg" alt="Algorithmics School" class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="text-lg sm:text-xl font-bold">Algorithmics School</h4>
+                            <p class="text-red-200 text-sm">School</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-3 text-sm sm:text-base">
+                        "The curriculum provided by Elmehdi was outstanding. Our students learned how to create their own games using Unity and Roblox Studio."
+                    </p>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 p-4 sm:p-6 rounded-xl backdrop-blur-sm testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+                            <img src="img/testimonial-3.jpg" alt="Nabila Benchikh" class="w-full h-full object-cover">
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="text-lg sm:text-xl font-bold">Nabila Benchikh</h4>
+                            <p class="text-red-200 text-sm">School Principal</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-3 text-sm sm:text-base">
+                        "The 2D multiplayer game developed by Elmehdi was a fantastic addition to our program. It provided an engaging way for students to learn game development."
+                    </p>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 contact-info">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4">Contact Information</h3>
+                    
+                    <div class="flex items-start mb-4">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-map-marker-alt text-sm sm:text-base"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm sm:text-base">Location</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Benslimane, Casablanca, Morocco</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-4">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-envelope text-sm sm:text-base"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm sm:text-base">Email</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">mehdidair1998@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-6">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-phone-alt text-sm sm:text-base"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm sm:text-base">Phone</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">+212 6 16 64 70 52</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4">Follow Me</h3>
+                    <div class="flex space-x-3">
+                        <a href="https://x.com/ElmehdiDair" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-twitter text-sm sm:text-base"></i>
+                        </a>
+                        <a href="https://www.facebook.com/laylay.mehdi/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-facebook-f text-sm sm:text-base"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCAycs1BKd3-QY3dXzAJjIqw" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-youtube text-sm sm:text-base"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mehdi_marwan_/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-instagram text-sm sm:text-base"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/elmehdi-dair-68971b174/" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 gradient-bg rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                            <i class="fab fa-linkedin-in text-sm sm:text-base"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm sm:text-base font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition duration-300 text-sm sm:text-base" required>
+                        </div>
+                                                
+                        <div>
+                            <label for="email" class="block text-sm sm:text-base font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition duration-300 text-sm sm:text-base" required>
+                        </div>
+                                                
+                        <div>
+                            <label for="subject" class="block text-sm sm:text-base font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition duration-300 text-sm sm:text-base" required>
+                        </div>
+                                                
+                        <div>
+                            <label for="message" class="block text-sm sm:text-base font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition duration-300 text-sm sm:text-base" required></textarea>
+                        </div>
+                                                
+                        <button type="submit" class="w-full gradient-bg text-white font-medium py-2 sm:py-3 px-4 rounded-lg hover:opacity-90 transition duration-300 text-sm sm:text-base">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col items-center">
+                <a href="#" class="text-xl sm:text-2xl font-bold gradient-text mb-4">Elmehdi Dair</a>
+                <div class="flex space-x-4 mb-4">
+                    <a href="https://x.com/ElmehdiDair" target="_blank" class="hover:text-red-400 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/laylay.mehdi/" target="_blank" class="hover:text-red-400 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCAycs1BKd3-QY3dXzAJjIqw" target="_blank" class="hover:text-red-400 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/mehdi_marwan_/" target="_blank" class="hover:text-red-400 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/elmehdi-dair-68971b174/" target="_blank" class="hover:text-red-400 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-4 text-sm sm:text-base">
+                    Senior Unity Developer specializing in game development, VR/AR experiences, and interactive applications with 6+ years of professional experience.
+                </p>
+                <div class="border-t border-gray-800 w-full pt-4 text-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; <span id="year"></span> Elmehdi Dair. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-6 right-6 w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.remove('active');
+            });
+        });
+
+        // Typed.js effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typed = new Typed('#typed', {
+                strings: ['Senior Unity Developer', 'Game Instructor', 'VR Developer', 'AR Developer', 'Mobile Developer'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+        });
+
+        // Portfolio filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                                
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('bg-red-500', 'text-white');
+                    btn.classList.add('bg-white');
+                });
+                this.classList.remove('bg-white');
+                this.classList.add('bg-red-500', 'text-white');
+                                
+                // Filter items
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('portfolio-container')) {
+                        animateSkillBars();
+                    }
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.portfolio-item, .timeline-item, .service-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+                        
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+                        
+            // Here you would typically send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
+                        
+            // Reset form
+            this.reset();
+        });
+
+        // Simple Typed.js implementation
+        class Typed {
+            constructor(element, options) {
+                this.element = element;
+                this.strings = options.strings || [];
+                this.typeSpeed = options.typeSpeed || 40;
+                this.backSpeed = options.backSpeed || 30;
+                this.loop = options.loop || false;
+                this.currentString = 0;
+                this.currentChar = 0;
+                this.isDeleting = false;
+                this.typing();
+            }
+                        
+            typing() {
+                const fullString = this.strings[this.currentString];
+                                
+                if (this.isDeleting) {
+                    this.currentChar--;
+                } else {
+                    this.currentChar++;
+                }
+                                
+                this.element.textContent = fullString.substring(0, this.currentChar);
+                                
+                if (!this.isDeleting && this.currentChar === fullString.length) {
+                    setTimeout(() => {
+                        this.isDeleting = true;
+                        this.typing();
+                    }, 1000);
+                } else if (this.isDeleting && this.currentChar === 0) {
+                    this.isDeleting = false;
+                    this.currentString = (this.currentString + 1) % this.strings.length;
+                    setTimeout(() => this.typing(), 500);
+                } else {
+                    const speed = this.isDeleting ? this.backSpeed : this.typeSpeed;
+                    setTimeout(() => this.typing(), speed);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
